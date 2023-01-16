@@ -26,17 +26,19 @@ function startQuiz(event) {
 function iterateQs() {
     //start with index 0 (qTitle = 0); 
     // QTitle.textContent.id = "question-title"
-    const QTitle = document.createElement("h2");
-    const node = document.createTextNode("ello ello")
-    QTitle.appendChild(node);
-    displayQuestions.appendChild(QTitle);
-    QTitle = "gooday mate";
     var qNumber = 0;
     var currentQ = "";
+    currentQ = quizQuestions[qNumber].question;
+    const QTitle = document.createElement("h2");
+    const node = document.createTextNode(currentQ) // displays the question 
+    QTitle.appendChild(node);
+    displayQuestions.appendChild(QTitle);
+    // QTitle = ;
+    
     // var currentQ = QTitle.textContent
     console.log(typeof currentQ)
     console.log(currentQ)
-    currentQ = quizQuestions[qNumber].question;
+    
 
     // QTitle = currentQ
     console.log(typeof currentQ)
