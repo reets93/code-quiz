@@ -3,8 +3,9 @@ var timerElement = document.querySelector("#time");
 var displayQuestions = document.querySelector("#questions")
 var submit = document.querySelector("#submit")
 var startScreen = document.querySelector("#start-screen")
-var QTitle = document.querySelector("h2")
+// var QTitle = document.querySelector("#question-title")
 var answerChoice = document.querySelector("#choices")
+
 
 var secondsLeft = 71;
 
@@ -14,7 +15,7 @@ startButton.addEventListener("click", startQuiz)
 function startQuiz(event) {
     startTimer();
     startScreen.className = "hide";
-    displayQuestions.className = "visible"
+    displayQuestions.className = "visible";
     iterateQs() // this displays the answers at least.
     // displayQuestions.textContent = iterateQs()     // this does not display the questions.   
     // displayQuestions.setAttribute("display", "block")
@@ -23,12 +24,51 @@ function startQuiz(event) {
 // or displayquestions.textcontent = the iterate function?;
 
 function iterateQs() {
+    //start with index 0 (qTitle = 0); 
+    // QTitle.textContent.id = "question-title"
+    const QTitle = document.createElement("h2");
+    const node = document.createTextNode("ello ello")
+    QTitle.appendChild(node);
+    displayQuestions.appendChild(QTitle);
+    QTitle = "gooday mate";
+    var qNumber = 0;
+    var currentQ = "";
+    // var currentQ = QTitle.textContent
+    console.log(typeof currentQ)
+    console.log(currentQ)
+    currentQ = quizQuestions[qNumber].question;
+
+    // QTitle = currentQ
+    console.log(typeof currentQ)
+    console.log(currentQ)
+    for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
+    answerChoice = quizQuestions[i].answers;
+    }
+    displayQuestions.textContent = QTitle + answerChoice
+    
+    // validation
+    // onclick(if (qNumber = 9){
+    //     show result page
+    // } else {
+    //         if (selectedbutton ==true) {
+    //          qnumber = qnumber +1
+    //          add 'correct' message
+    //          }else {
+    //           q number = qnumber +1
+    //          add 'incorrect' message
+    //          secondsLeft -10
+    // })}
+
+    //  array.forEach(function(currentValue, index, arr), thisValue)
+    // answerChoice.foreach()
+    //then create for-loop underneath based on on click; 
+    //for each create a button whih has question text; 
+    //then on click - if statement to validate
     for (i = 0; i < quizQuestions.length; i++) {
-        QTitle = quizQuestions[i].question;
-        answerChoice = quizQuestions[i].answers;
-        // QTitle.classList.add("h2")
+        
+       
         // answerChoice.classList.add("button choices")
-        displayQuestions.textContent = QTitle + answerChoice //shows them both. Need to style them now and get them to only show up one at a time
+        // displayQuestions.textContent = QTitle + answerChoice //shows them both. Need to style them now and get them to only show up one at a time
         console.log(QTitle)
         console.log(answerChoice)
 // append questiontitle to question div?

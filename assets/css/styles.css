@@ -3,7 +3,7 @@ body {
   font-size: 120%;
 }
 
-h2 {
+#question-title {
   color: orange;
   font-size: 100px;
 }
