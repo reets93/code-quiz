@@ -17,6 +17,8 @@ function startQuiz(event) {
     iterateQs()
 }
 
+    var qNumber = 0;
+    var currentQ = "";
 //displays the questions and answers
 function iterateQs() {
     //start with index 0; 
@@ -24,29 +26,24 @@ function iterateQs() {
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
     const QTitle = document.createElement("h2");
-    const node = document.createTextNode(currentQ) // displays the question 
-    QTitle.appendChild(node);
+    const qNode = document.createTextNode(currentQ) // displays the question in title area
+    QTitle.appendChild(qNode);
     const QElement = document.getElementById("question-title")
-    QElement.appendChild(QTitle); // TO FIX = creates an h2 w/in an h2
+    QElement.appendChild(QTitle);
 
+
+    
     // iterates through the question answer and displays as separate buttons
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answers to separate buttons
         const ansButton = document.createElement("button");
-        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i]);
+        const aNode = document.createTextNode(quizQuestions[qNumber].answers[i]);
         const ansElement = document.getElementById("choices");
-        ansButton.appendChild(node2);
+        ansButton.appendChild(aNode);
         ansElement.appendChild(ansButton);
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
         console.log(ansElement);
-        console.log(i)    
-        
-        ansElement.onclick = function validate(event) {
-        console.log("testing this works")  
-        if (i === quizQuestions[qNumber].correctAnswer) {
-            console.log("this works")
-        }
-    }
+        console.log(i)
     }
 
     // validation
@@ -63,7 +60,19 @@ function iterateQs() {
     // })}
 }
 
+    // below is needed as it is only stored locally above. if stored globally above then it all goes wrong. 
 
+    const ansButton = document.createElement("button");
+    const ansElement = document.getElementById("choices");
+    ansElement.onclick = function validate(event) {
+        console.log("testing this works")
+        console.log(ansElement)
+        // if (ansElement == quizQuestions[qNumber].correctAnswer) {
+        //     console.log("this is the correct answer")
+        // } else {
+        //     console.log("this is the wrong answer")
+        // }
+    }
 
 
 function startTimer() {
