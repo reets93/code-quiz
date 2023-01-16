@@ -25,11 +25,11 @@ function iterateQs() {
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
-    const QTitle = document.createElement("question-title");
+    const QTitle = document.createElement("h2"); 
     const node = document.createTextNode(currentQ) // displays the question 
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
-    QElement.appendChild(QTitle);
+    QElement.appendChild(QTitle); // TO FIX = creates an h2 w/in an h2
 
     // below only gives one answer. - either all answers in one button, or just one answer in one button
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
