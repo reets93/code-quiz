@@ -33,23 +33,25 @@ function iterateQs() {
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
     QElement.appendChild(QTitle);
-    // QTitle = ""; // don't understand why the question is only in the correct styling when this is visible but is invalid. 
-    console.log(typeof currentQ)
-    console.log(currentQ)
-    
+    // console.log(typeof currentQ)
+    // console.log(currentQ)
+
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answer to button
         const ansButton = document.createElement("choices");
         const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])
+        for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
+            const ansElement = document.getElementById("choices")
+            ansElement.style = "display: inline-block; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
+            ansElement.appendChild(ansButton)
+        }
+
         ansButton.appendChild(node2);
-        const ansElement = document.getElementById("choices")
-        ansElement.appendChild(ansButton)
-        ansElement.style = "display: inline-block; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-    // answerChoice = quizQuestions[i].answers; don't think I need this
+
+        // answerChoice = quizQuestions[i].answers; don't think I need this
 
     }
-    // displayQuestions.textContent = QTitle + answerChoice
-    
+
     // validation
     // onclick(if (qNumber = 9){
     //     show result page
@@ -63,29 +65,13 @@ function iterateQs() {
     //          secondsLeft -10
     // })}
 
-    //  array.forEach(function(currentValue, index, arr), thisValue)
+    // array.forEach(function(currentValue, index, arr), thisValue)
     // answerChoice.foreach()
-    //then create for-loop underneath based on on click; 
-    //for each create a button whih has question text; 
-    //then on click - if statement to validate
-    for (i = 0; i < quizQuestions.length; i++) {
-        
-       
-        // answerChoice.classList.add("button choices")
-        // displayQuestions.textContent = QTitle + answerChoice //shows them both. Need to style them now and get them to only show up one at a time
-        console.log(QTitle)
-        console.log(answerChoice)
-// append questiontitle to question div?
-// create button element 
-// link to answers 
-// append to body
-        // set the stylings for questions and answers --> will this make them visible?
 
-        // alert(quizQuestions[i].question); // this works, so i know this for loop will function.
-        //display question
-        //display answer buttons (style with choices / button classes)
-    }
+
+    // displayQuestions.textContent = QTitle + answerChoice //shows them both. Need to style them now and get them to only show up one at a time
 }
+// }
 
 function startTimer() {
     var timerInterval = setInterval(function () {
