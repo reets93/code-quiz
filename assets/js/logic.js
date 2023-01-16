@@ -38,29 +38,14 @@ function iterateQs() {
         const ansElement = document.getElementById("choices")
         ansButton.appendChild(node2);     
         ansElement.appendChild(ansButton);
+        ansElement.className = "answerOption"
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-        
-        var chosenAnswer = ansElement;
-        ansElement.addEventListener("click", validate)
-        if (ansElement.click = option1) {
-            console.log("clicked " + option1)
-        }
         }
         
-        var option1 = document.body.children[2].children[1].children[1].children[0]
-        var option2 = document.body.children[2].children[1].children[1].children[1]
-        var option3 = document.body.children[2].children[1].children[1].children[2]
-        var option4 = document.body.children[2].children[1].children[1].children[3] 
-
-
-        function validate() {
-            let i=0
-                if (document.body.children[2].children[1].children[1].children[i]  == quizQuestions[qNumber].correctAnswer) {
-                    console.log("this shows correct answer)")
-                } else {
-                    console.log("this is not the right answer")
-                }
-        }
+        var answerOption = document.getElementsByClassName("answerOption")        
+        answerOption.addEventListener("click", function(event) {
+            console.log(event.target.textContent)
+        })
 
     // validation
     // onclick(if (qNumber = 9){
