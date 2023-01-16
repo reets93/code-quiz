@@ -16,15 +16,12 @@ function startQuiz(event) {
     startTimer();
     startScreen.className = "hide";
     displayQuestions.className = "visible";
-    iterateQs() // this displays the answers at least.
-    // displayQuestions.textContent = iterateQs()     // this does not display the questions.   
-    // displayQuestions.setAttribute("display", "block")
-    // displayQuestions.textContent = "testing"
+    iterateQs()
 }
-// or displayquestions.textcontent = the iterate function?;
 
+//displays the questions and answers
 function iterateQs() {
-    //start with index 0 (qTitle = 0); 
+    //start with index 0; 
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
@@ -33,24 +30,30 @@ function iterateQs() {
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
     QElement.appendChild(QTitle);
-    // console.log(typeof currentQ)
-    // console.log(currentQ)
 
+// below using li method from class activity (quizQuestion[qnumber].answers)
+//     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
+// var ans1 = document.createElement("choices")
+// // var ans2 = document.createElement("choices")
+// // var ans3 = document.createElement("choices")
+// // var ans3 = document.createElement("choices")
+// var choicesDiv = document.createElement("choices")
+// choicesDiv.appendChild(ans1)
+// ans1.textContent ="testing"
+//     }
+
+    // below only gives one answer. - either all answers in one button, or just one answer in one button
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answer to button
-        const ansButton = document.createElement("choices");
-        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])
+        const ansButton = document.createElement("button");
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
+        const ansElement = document.getElementById("choices")
         for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
-            const ansElement = document.getElementById("choices")
-            ansElement.style = "display: inline-block; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-            ansElement.appendChild(ansButton)
-        }
-
-        ansButton.appendChild(node2);
-
-        // answerChoice = quizQuestions[i].answers; don't think I need this
-
-    }
+        ansButton.appendChild(node2);            
+        ansElement.appendChild(ansButton);         
+        ansElement.style = "display:block; width: 100%; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
+        console.log(ansElement)
+    }}
 
     // validation
     // onclick(if (qNumber = 9){
