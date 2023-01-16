@@ -4,11 +4,9 @@ var displayQuestions = document.querySelector("#questions")
 var submit = document.querySelector("#submit")
 var startScreen = document.querySelector("#start-screen")
 // var QTitle = document.querySelector("#question-title")
-var answerChoice = document.querySelector("#choices")
-
+var answerChoice = document.querySelector("#choices.button")
 
 var secondsLeft = 71;
-
 
 // A start button that when clicked a timer starts and the first question appears.
 startButton.addEventListener("click", startQuiz)
@@ -25,22 +23,30 @@ function iterateQs() {
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
-    const QTitle = document.createElement("h2"); 
+    const QTitle = document.createElement("h2");
     const node = document.createTextNode(currentQ) // displays the question 
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
     QElement.appendChild(QTitle); // TO FIX = creates an h2 w/in an h2
 
-    // below only gives one answer. - either all answers in one button, or just one answer in one button
+    // iterates through the question answer and displays as separate buttons
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
-        // append answer to button
+        // append answers to separate buttons
         const ansButton = document.createElement("button");
-        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
-        const ansElement = document.getElementById("choices")
-        ansButton.appendChild(node2);            
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i]);
+        const ansElement = document.getElementById("choices");
+        ansButton.appendChild(node2);
         ansElement.appendChild(ansButton);
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-        console.log(ansElement)
+        console.log(ansElement);
+        console.log(i)    
+        
+        ansElement.onclick = function validate(event) {
+        console.log("testing this works")  
+        if (i === quizQuestions[qNumber].correctAnswer) {
+            console.log("this works")
+        }
+    }
     }
 
     // validation
@@ -55,13 +61,10 @@ function iterateQs() {
     //          add 'incorrect' message
     //          secondsLeft -10
     // })}
-
-    // array.forEach(function(currentValue, index, arr), thisValue)
-    // answerChoice.foreach()
-
-
-    // displayQuestions.textContent = QTitle + answerChoice //shows them both. Need to style them now and get them to only show up one at a time
 }
+
+
+
 
 function startTimer() {
     var timerInterval = setInterval(function () {
