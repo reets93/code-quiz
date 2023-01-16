@@ -4,9 +4,11 @@ var displayQuestions = document.querySelector("#questions")
 var submit = document.querySelector("#submit")
 var startScreen = document.querySelector("#start-screen")
 // var QTitle = document.querySelector("#question-title")
-var answerChoice = document.querySelector("#choices.button")
+var answerChoice = document.querySelector("#choices")
+
 
 var secondsLeft = 71;
+
 
 // A start button that when clicked a timer starts and the first question appears.
 startButton.addEventListener("click", startQuiz)
@@ -17,35 +19,44 @@ function startQuiz(event) {
     iterateQs()
 }
 
-    var qNumber = 0;
-    var currentQ = "";
 //displays the questions and answers
 function iterateQs() {
     //start with index 0; 
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
-    const QTitle = document.createElement("h2");
-    const qNode = document.createTextNode(currentQ) // displays the question in title area
-    QTitle.appendChild(qNode);
+    const QTitle = document.createElement("h2"); 
+    const node = document.createTextNode(currentQ) // displays the question 
+    QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
-    QElement.appendChild(QTitle);
+    QElement.appendChild(QTitle); //
+    console.log(qNumber)
 
-
-    
-    // iterates through the question answer and displays as separate buttons
-    for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
-        // append answers to separate buttons
+    // below only gives one answer. - either all answers in one button, or just one answer in one button
+    for (let i = 0; i < quizQuestions[qNumber].answers.length; i++) {
+        // append answer to button
         const ansButton = document.createElement("button");
-        const aNode = document.createTextNode(quizQuestions[qNumber].answers[i]);
-        const ansElement = document.getElementById("choices");
-        ansButton.appendChild(aNode);
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
+        const ansElement = document.getElementById("choices")
+        ansButton.appendChild(node2);            
         ansElement.appendChild(ansButton);
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-        console.log(ansElement);
-        console.log(i)
-    }
+        console.log(ansElement)    
+        
+        ansElement.addEventListener("click", validate)
 
+        }
+        
+        let i=0
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
+        function validate() {
+                if (node2.textContent == quizQuestions[qNumber].correctAnswer) {
+                    console.log("this shows correct answer)")
+                } else {
+                    console.log("this is not the right answer")
+                }
+        }
+        
     // validation
     // onclick(if (qNumber = 9){
     //     show result page
@@ -59,21 +70,6 @@ function iterateQs() {
     //          secondsLeft -10
     // })}
 }
-
-    // below is needed as it is only stored locally above. if stored globally above then it all goes wrong. 
-
-    const ansButton = document.createElement("button");
-    const ansElement = document.getElementById("choices");
-    ansElement.onclick = function validate(event) {
-        console.log("testing this works")
-        console.log(ansElement)
-        // if (ansElement == quizQuestions[qNumber].correctAnswer) {
-        //     console.log("this is the correct answer")
-        // } else {
-        //     console.log("this is the wrong answer")
-        // }
-    }
-
 
 function startTimer() {
     var timerInterval = setInterval(function () {
