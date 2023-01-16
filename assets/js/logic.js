@@ -31,17 +31,6 @@ function iterateQs() {
     const QElement = document.getElementById("question-title")
     QElement.appendChild(QTitle);
 
-// below using li method from class activity (quizQuestion[qnumber].answers)
-//     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
-// var ans1 = document.createElement("choices")
-// // var ans2 = document.createElement("choices")
-// // var ans3 = document.createElement("choices")
-// // var ans3 = document.createElement("choices")
-// var choicesDiv = document.createElement("choices")
-// choicesDiv.appendChild(ans1)
-// ans1.textContent ="testing"
-//     }
-
     // below only gives one answer. - either all answers in one button, or just one answer in one button
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answer to button
