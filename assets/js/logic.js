@@ -25,28 +25,29 @@ function startQuiz(event) {
 
 function iterateQs() {
     //start with index 0 (qTitle = 0); 
-    // QTitle.textContent.id = "question-title"
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
-    const QTitle = document.createElement("h2");
+    const QTitle = document.createElement("question-title");
     const node = document.createTextNode(currentQ) // displays the question 
     QTitle.appendChild(node);
-    displayQuestions.appendChild(QTitle);
-    // QTitle = ;
-    
-    // var currentQ = QTitle.textContent
+    const QElement = document.getElementById("question-title")
+    QElement.appendChild(QTitle);
+    // QTitle = ""; // don't understand why the question is only in the correct styling when this is visible but is invalid. 
     console.log(typeof currentQ)
     console.log(currentQ)
     
-
-    // QTitle = currentQ
-    console.log(typeof currentQ)
-    console.log(currentQ)
     for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
-    answerChoice = quizQuestions[i].answers;
+        // append answer to button
+        const ansButton = document.createElement("choices");
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])
+        ansButton.appendChild(node2);
+        const ansElement = document.getElementById("choices")
+        ansElement.appendChild(ansButton)
+    // answerChoice = quizQuestions[i].answers; don't think I need this
+
     }
-    displayQuestions.textContent = QTitle + answerChoice
+    // displayQuestions.textContent = QTitle + answerChoice
     
     // validation
     // onclick(if (qNumber = 9){
