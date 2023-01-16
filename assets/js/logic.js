@@ -44,6 +44,7 @@ function iterateQs() {
         ansButton.appendChild(node2);
         const ansElement = document.getElementById("choices")
         ansElement.appendChild(ansButton)
+        ansElement.style = "display: inline-block; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
     // answerChoice = quizQuestions[i].answers; don't think I need this
 
     }
