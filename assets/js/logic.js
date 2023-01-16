@@ -37,12 +37,12 @@ function iterateQs() {
         const ansButton = document.createElement("button");
         const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
         const ansElement = document.getElementById("choices")
-        for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
+        // for (i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         ansButton.appendChild(node2);            
         ansElement.appendChild(ansButton);         
-        ansElement.style = "display:block; width: 100%; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
+        ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; background-color: #563d7c; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
         console.log(ansElement)
-    }}
+    }
 
     // validation
     // onclick(if (qNumber = 9){
