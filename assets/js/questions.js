@@ -5,7 +5,7 @@ var quizQuestions = [
             "this is an incorrect answer",
             "this is a correct answer",
             "this one ain't right",
-            "this is terrible"
+            "this is terrible",
         ],
         correctAnswer: 1
     },

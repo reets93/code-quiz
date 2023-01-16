@@ -29,39 +29,44 @@ function iterateQs() {
     const node = document.createTextNode(currentQ) // displays the question 
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
-    QElement.appendChild(QTitle); //
-    console.log(qNumber)
+    QElement.appendChild(QTitle); 
 
-    // below only gives one answer. - either all answers in one button, or just one answer in one button
     for (let i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answer to button
         const ansButton = document.createElement("button");
         const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
         const ansElement = document.getElementById("choices")
-        ansButton.appendChild(node2);            
+        ansButton.appendChild(node2);     
         ansElement.appendChild(ansButton);
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
-        console.log(ansElement)    
         
+        var chosenAnswer = ansElement;
         ansElement.addEventListener("click", validate)
-
+        if (ansElement.click = option1) {
+            console.log("clicked " + option1)
+        }
         }
         
-        let i=0
-        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
+        var option1 = document.body.children[2].children[1].children[1].children[0]
+        var option2 = document.body.children[2].children[1].children[1].children[1]
+        var option3 = document.body.children[2].children[1].children[1].children[2]
+        var option4 = document.body.children[2].children[1].children[1].children[3] 
+
+
         function validate() {
-                if (node2.textContent == quizQuestions[qNumber].correctAnswer) {
+            let i=0
+                if (document.body.children[2].children[1].children[1].children[i]  == quizQuestions[qNumber].correctAnswer) {
                     console.log("this shows correct answer)")
                 } else {
                     console.log("this is not the right answer")
                 }
         }
-        
+
     // validation
     // onclick(if (qNumber = 9){
     //     show result page
     // } else {
-    //         if (selectedbutton ==true) {
+    //         if (the selected button == correctAnswer) {
     //          qnumber = qnumber +1
     //          add 'correct' message
     //          }else {
@@ -106,5 +111,3 @@ function resultsBoard() {
 // if (chosen answer !== correctAnswer) {
     // secondsLeft -10;
 // }
-
-// append list items/answers? style as buttons 
