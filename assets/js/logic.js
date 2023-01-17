@@ -65,7 +65,6 @@ function iterateQs() {
 
 // TO DO:
 // tidy up the loop / if statement for the whole questions loop -> make sure that they clear each time, but display the next one
-// deduct 10 seconds from the secondsLeft if incorrect 
 // add a form + local storage with initials 
 // event listener results button to get to the high scores page
 // display highest score from local storage
@@ -80,6 +79,7 @@ function correct() {
 }
 
 function incorrect() {
+    secondsLeft = secondsLeft-10
     const incorrectMessage = document.createElement("h3");
     incorrectMessage.textContent = "That's incorrect"
     displayQuestions.appendChild(incorrectMessage);
