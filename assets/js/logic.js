@@ -114,18 +114,18 @@ function endQuiz(event) {
     endScreen.className = "visible"
     finalScore.textContent = secondsLeft
     // enter initials + submit
-
 }
 
-// end screen submit 
-submit.addEventListener("submit", submitResults)
+// localStorage.setItem("initials + final score")
+// end screen submit     
+submit.addEventListener("click", submitResults)
 function submitResults(event) {
     // event.preventDefault()
-    // localStorage.setItem("initials");
-    location.href = "https://www.google.com"
+    window.location.href = "highscores.html"
 };
 
-function resultsBoard() {
 
+function resultsBoard() {
+localStorage.getItem("initials")
     //event listener? go to highscores
 };
