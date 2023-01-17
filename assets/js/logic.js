@@ -48,14 +48,14 @@ function iterateQs() {
     answerOption.addEventListener("click", function validate(event) {
         console.log(event.target.textContent)
         if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
-            qNumber = qNumber+1;
+            qNumber = qNumber + 1;
             console.log("correct");
             console.log(qNumber);
             correct()
         } else {
-            qNumber = qNumber+1;
+            qNumber = qNumber + 1;
             console.log("incorrect");
-            secondsLeft-10;
+            secondsLeft - 10;
             console.log(qNumber);
             console.log(secondsLeft);
             incorrect();
@@ -65,20 +65,27 @@ function iterateQs() {
 
 // TO DO:
 // tidy up the loop / if statement for the whole questions loop -> make sure that they clear each time, but display the next one
-// add the correct / wrong message at end of the question based on answer
 // deduct 10 seconds from the secondsLeft if incorrect 
 // add a form + local storage with initials 
 // event listener results button to get to the high scores page
 // display highest score from local storage
 
-    function correct(){
-//add a 'correct' message at the bottom of the answers
+function correct() {
+    const correctMessage = document.createElement("h3");
+    correctMessage.textContent = "Well done! That's correct"
+    displayQuestions.appendChild(correctMessage);
+    correctMessage.style = "color: green"
+    console.log(correctMessage)
+    //add a 'correct' message at the bottom of the answers
+}
 
-    }
-
-    function incorrect(){
-//add a 'wrong' message at the bottom of the answers
-    }
+function incorrect() {
+    const incorrectMessage = document.createElement("h3");
+    incorrectMessage.textContent = "That's incorrect"
+    displayQuestions.appendChild(incorrectMessage);
+    incorrectMessage.style = "color: red"
+    console.log(incorrectMessage)
+}
 
 function startTimer() {
     var timerInterval = setInterval(function () {
