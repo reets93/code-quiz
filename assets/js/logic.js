@@ -21,7 +21,7 @@ function startQuiz(event) {
 
 //displays the questions and answers
 function iterateQs() {
-    // does this need to be a whole for loop limited to up to question 10 and at last question goes to end screen?
+    // does this need to be a whole while-loop, for-loop or an if loop (ifqNumber =10 then go to end screen, otherwise do the following)limited to up to question 10 and at last question goes to end screen?
     //start with index 0; 
     var qNumber = 0;
     var currentQ = "";
@@ -41,7 +41,7 @@ function iterateQs() {
         ansButton.appendChild(node2);
         ansElement.appendChild(ansButton);
         ansElement.className = "answerOption"
-        ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
+        // ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
     }
 
     var answerOption = document.querySelector(".answerOption")
@@ -50,29 +50,35 @@ function iterateQs() {
         if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
             qNumber = qNumber+1;
             console.log("correct");
-            console.log(qNumber)
+            console.log(qNumber);
+            correct()
         } else {
             qNumber = qNumber+1;
-            console.log("incorrect")
-            secondsLeft-10 //not working - fix
-            console.log(qNumber)
-            console.log(secondsLeft)
+            console.log("incorrect");
+            secondsLeft-10;
+            console.log(qNumber);
+            console.log(secondsLeft);
+            incorrect();
         }
     })
-
-    // validation
-    // onclick(if (qNumber = 9){
-    //     show result page
-    // } else {
-    //         if (the selected button == correctAnswer) {
-    //          qnumber = qnumber +1
-    //          add 'correct' message
-    //          }else {
-    //           q number = qnumber +1
-    //          add 'incorrect' message
-    //          secondsLeft -10
-    // })}
 }
+
+// TO DO:
+// tidy up the loop / if statement for the whole questions loop -> make sure that they clear each time, but display the next one
+// add the correct / wrong message at end of the question based on answer
+// deduct 10 seconds from the secondsLeft if incorrect 
+// add a form + local storage with initials 
+// event listener results button to get to the high scores page
+// display highest score from local storage
+
+    function correct(){
+//add a 'correct' message at the bottom of the answers
+
+    }
+
+    function incorrect(){
+//add a 'wrong' message at the bottom of the answers
+    }
 
 function startTimer() {
     var timerInterval = setInterval(function () {
