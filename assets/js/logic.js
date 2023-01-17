@@ -5,6 +5,7 @@ var submit = document.querySelector("#submit")
 var startScreen = document.querySelector("#start-screen")
 // var QTitle = document.querySelector("#question-title")
 var answerChoice = document.querySelector("#choices")
+var endScreen = document.querySelector("#end-screen")
 
 
 var secondsLeft = 71;
@@ -23,9 +24,9 @@ function startQuiz(event) {
 function iterateQs() {
     // does this need to be a whole while-loop, for-loop or an if loop (ifqNumber =10 then go to end screen, otherwise do the following)limited to up to question 10 and at last question goes to end screen?
     //start with index 0; 
-    // for (x=0; x<quizQuestions.length; x++){ // remove loop just to have one displayed. 
+    for (x=0; x<quizQuestions.length; x++){ // remove loop just to have one displayed. 
 // how to get it so it only shows one q&a at a time rather than all together at once?
-        var qNumber = 0; // 0+x for loops
+        var qNumber = 0+x; // 0+x for loops
         var currentQ = "";
         currentQ = quizQuestions[qNumber].question;
         const QTitle = document.createElement("h2");
@@ -64,7 +65,7 @@ function iterateQs() {
         }
     })
 }
-// }
+}
 
 // TO DO:
 // tidy up the loop / if statement for the whole questions loop -> make sure that they clear each time, but display the next one
@@ -100,7 +101,7 @@ function startTimer() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            // endQuiz()
+            endQuiz()
         }
     }, 1000)
 
@@ -109,12 +110,23 @@ function startTimer() {
 
 //event listener --> endQuiz based on submit button.
 function endQuiz(event) {
+    displayQuestions.className = "hide";
+    endScreen.className = "visible"
     // enter initials + submit
-    event.preventDefault()
     // display score - end-screen class = visible?
 
 };
 
+submit.addEventListener("submit", submitResults)
+function submitResults(event){
+    // event.preventDefault()
+    localStorage.setItem("initials");
+    location.href = "https://www.google.com"
+}
+    
+
+
 function resultsBoard() {
+
     //event listener? go to highscores
 };
