@@ -7,7 +7,7 @@ var quizQuestions = [
             "this one ain't right",
             "this is terrible",
         ],
-        correctAnswer: 1
+        correctAnswer: "this is a correct answer"
     },
     {
         question: "Here's the second question",
@@ -17,7 +17,7 @@ var quizQuestions = [
             "Don't choose me",
             "Maybe I'm right"
         ],
-        correctAnswer: 0
+        correctAnswer: "I'm the right answer"
     },
     {
         question: "My third question",
@@ -27,7 +27,7 @@ var quizQuestions = [
             "I'm not the one that you want",
             "pick me pick me",
         ],
-        correctAnswer: 3
+        correctAnswer: "pick me pick me"
     },
     {
         question: "Here is the fourth question",
@@ -37,7 +37,7 @@ var quizQuestions = [
             "Correct",
             "Wrong"
         ],
-        correctAnswer: 3
+        correctAnswer: "Correct"
     },
     { 
         question: "Question 5",
@@ -47,7 +47,7 @@ var quizQuestions = [
             "wrong",
             "wrong",
         ],
-        correctAnswer: 0
+        correctAnswer: "correct"
     }
 
 ]

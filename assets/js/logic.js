@@ -21,31 +21,44 @@ function startQuiz(event) {
 
 //displays the questions and answers
 function iterateQs() {
+    // does this need to be a whole for loop limited to up to question 10 and at last question goes to end screen?
     //start with index 0; 
     var qNumber = 0;
     var currentQ = "";
     currentQ = quizQuestions[qNumber].question;
-    const QTitle = document.createElement("h2"); 
+    const QTitle = document.createElement("h2");
     const node = document.createTextNode(currentQ) // displays the question 
     QTitle.appendChild(node);
     const QElement = document.getElementById("question-title")
-    QElement.appendChild(QTitle); 
+    QElement.appendChild(QTitle);
 
+    // this for-loop is to create the answers for quizQuestion[qNumber] on separate buttons
     for (let i = 0; i < quizQuestions[qNumber].answers.length; i++) {
         // append answer to button
         const ansButton = document.createElement("button");
-        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])        
+        const node2 = document.createTextNode(quizQuestions[qNumber].answers[i])
         const ansElement = document.getElementById("choices")
-        ansButton.appendChild(node2);     
+        ansButton.appendChild(node2);
         ansElement.appendChild(ansButton);
         ansElement.className = "answerOption"
         ansElement.style = "display:inline-block;; margin: 5px; cursor: pointer; font-size: 100%; border-radius: 5px; padding: 2px 10px; color: white; border: 0; transition: background-color 0.1s;"
+    }
+
+    var answerOption = document.querySelector(".answerOption")
+    answerOption.addEventListener("click", function validate(event) {
+        console.log(event.target.textContent)
+        if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
+            qNumber = qNumber+1;
+            console.log("correct");
+            console.log(qNumber)
+        } else {
+            qNumber = qNumber+1;
+            console.log("incorrect")
+            secondsLeft-10 //not working - fix
+            console.log(qNumber)
+            console.log(secondsLeft)
         }
-        
-        var answerOption = document.getElementsByClassName("answerOption")        
-        answerOption.addEventListener("click", function(event) {
-            console.log(event.target.textContent)
-        })
+    })
 
     // validation
     // onclick(if (qNumber = 9){
