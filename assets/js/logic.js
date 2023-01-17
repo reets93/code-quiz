@@ -3,14 +3,10 @@ var timerElement = document.querySelector("#time");
 var displayQuestions = document.querySelector("#questions")
 var submit = document.querySelector("#submit")
 var startScreen = document.querySelector("#start-screen")
-// var QTitle = document.querySelector("#question-title")
 var answerChoice = document.querySelector("#choices")
 var endScreen = document.querySelector("#end-screen")
-var finalScore = document.querySelector("#final-score")
-
 
 var secondsLeft = 71;
-
 
 // A start button that when clicked a timer starts and the first question appears.
 startButton.addEventListener("click", startQuiz)
@@ -70,7 +66,6 @@ function iterateQs() {
 
 // TO DO:
 // tidy up the loop / if statement for the whole questions loop -> make sure that they clear each time, but display the next one
-// event listener results button to get to the high scores page
 // display highest score from local storage
 
 
@@ -116,16 +111,29 @@ function endQuiz(event) {
     // enter initials + submit
 }
 
+
+var finalScore = document.querySelector("#final-score")
+var initialsInput = document.querySelector("#initials")
+var userScore = {
+    user: initials.value.trim(),
+    score: finalScore.textContent = secondsLeft
+}
+
 // localStorage.setItem("initials + final score")
 // end screen submit     
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
-    // event.preventDefault()
+    event.preventDefault()
+    localStorage.setItem("result", userScore)
     window.location.href = "highscores.html"
 };
 
 
 function resultsBoard() {
-localStorage.getItem("initials")
+    var resultsBoard = localStorage.getItem("result")
+    
+    // append as a li to ul 
     //event listener? go to highscores
+    // go back button, 
+    // clear highscores --> localStorage.clear()
 };
