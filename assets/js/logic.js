@@ -24,15 +24,17 @@ var currentQ = "";
 
 //displays the questions and answers
 function iterateQs() {
-    //start with index 0; 
-    if (qNumber > quizQuestions.length) {
+    // start with index 0; 
+    // if there are no more questions or time left, go to the end screen
+    if (qNumber >= quizQuestions.length) {
         endQuiz()
     } else if (secondsLeft == 0) {
         endQuiz()
     } else {
+        // displaying the current question
         currentQ = quizQuestions[qNumber].question;
         const QTitle = document.createElement("h2");
-        const node = document.createTextNode(currentQ) // displays the question 
+        const node = document.createTextNode(currentQ) 
         QTitle.appendChild(node);
         const QElement = document.getElementById("question-title")
         QElement.appendChild(QTitle);
@@ -48,6 +50,7 @@ function iterateQs() {
             ansElement.className = "answerOption"
         }
 
+        // validating the chosen answer
         var answerOption = document.querySelector(".answerOption")
         answerOption.addEventListener("click", function validate(event) {
             console.log(event.target.textContent)
@@ -57,7 +60,7 @@ function iterateQs() {
                 correct()
             } else {
                 console.log("incorrect");
-                secondsLeft - 10;
+                secondsLeft -10;
                 console.log(qNumber);
                 console.log(secondsLeft);
                 incorrect();
@@ -66,20 +69,20 @@ function iterateQs() {
     }
 }
 
-//add a 'correct' message at the bottom of the answers
+//add a 'correct' alert
 function correct() {
     alert("Well done! That's correct")
-    qNumber = qNumber + 1
+    qNumber = qNumber+1
     qTitle.innerHTML = ""
     answerChoice.innerHTML = ""
     iterateQs()
 }
 
-//add an 'incorrect' message at the bottom of the answers
+//add an 'incorrect'alert
 function incorrect() {
-    secondsLeft = secondsLeft - 10
+    secondsLeft = secondsLeft -10
     alert("That's incorrect")
-    qNumber = qNumber + 1
+    qNumber = qNumber+1
     qTitle.innerHTML = ""
     answerChoice.innerHTML = ""
     iterateQs()
@@ -114,10 +117,11 @@ submit.addEventListener("click", submitResults)
 function submitResults(event) {
     event.preventDefault()
     window.location.href = "highscores.html"
-    // resultsBoard()
 };
 
+
 function resultsBoard() {
+// * append result to scoreboard
 
 
 };
@@ -129,5 +133,4 @@ function resultsBoard() {
 // TO DO
 // * local storage for initials 
 // * retrieve from local storage on highscores 
-// * append result to scoreboard
 // * clear highscores button --> addeventlistener. clear
