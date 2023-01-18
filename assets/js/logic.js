@@ -111,29 +111,31 @@ function endQuiz(event) {
     // enter initials + submit
 }
 
-
-var finalScore = document.querySelector("#final-score")
-var initialsInput = document.querySelector("#initials")
+var initials = document.querySelector("#initials")
+// var initialsInput = initials.textContent("") // check how to do the local storage from text input 
 var userScore = {
-    user: initials.value.trim(),
-    score: finalScore.textContent = secondsLeft
+    user: initialsInput,
+    result: secondsLeft
 }
+var finalScore = document.querySelector("#final-score")
 
-// localStorage.setItem("initials + final score")
+
 // end screen submit     
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
     event.preventDefault()
-    localStorage.setItem("result", userScore)
+    localStorage.setItem("results",userScore)
     window.location.href = "highscores.html"
+    resultsBoard()
 };
 
 
 function resultsBoard() {
-    var resultsBoard = localStorage.getItem("result")
-    
-    // append as a li to ul 
-    //event listener? go to highscores
-    // go back button, 
-    // clear highscores --> localStorage.clear()
-};
+    localStorage.getItem("results")
+//appendchild
+//display highest score on scoreboard.
+
+};   
+
+//addeventlistener     
+// clear highscores --> localStorage.clear()
