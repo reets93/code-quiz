@@ -6,6 +6,7 @@ var startScreen = document.querySelector("#start-screen")
 var answerChoice = document.querySelector("#choices")
 var endScreen = document.querySelector("#end-screen")
 var finalScore = document.querySelector("#final-score")
+var qTitle = document.querySelector('#question-title')
 
 var secondsLeft = 71;
 
@@ -18,7 +19,7 @@ function startQuiz(event) {
     iterateQs()
 }
 
-var qNumber = 0; // 0+x for loops
+var qNumber = 0;
 var currentQ = "";
 
 //displays the questions and answers
@@ -78,6 +79,8 @@ function correct() {
     correctMessage.style = "color: green"
     console.log(correctMessage)
     qNumber = qNumber+1
+    qTitle.innerHTML = ""
+    answerChoice.innerHTML = ""
     iterateQs()
 }
 
@@ -90,6 +93,8 @@ function incorrect() {
     incorrectMessage.style = "color: red"
     console.log(incorrectMessage)
     qNumber = qNumber+1
+    qTitle.innerHTML = ""
+    answerChoice.innerHTML = ""
     iterateQs()
 }
 
