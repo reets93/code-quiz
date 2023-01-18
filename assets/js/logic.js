@@ -34,7 +34,7 @@ function iterateQs() {
         // displaying the current question
         currentQ = quizQuestions[qNumber].question;
         const QTitle = document.createElement("h2");
-        const node = document.createTextNode(currentQ) 
+        const node = document.createTextNode(currentQ)
         QTitle.appendChild(node);
         const QElement = document.getElementById("question-title")
         QElement.appendChild(QTitle);
@@ -52,44 +52,49 @@ function iterateQs() {
 
         // validating the chosen answer
         var answerOption = document.querySelector(".answerOption")
-        answerOption.addEventListener("click", validate) 
+        answerOption.addEventListener("click", validate)
 
     }
 }
 
-        function validate(event) {
-            console.log(event.target.textContent)
-            if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
-                console.log("correct");
-                console.log(qNumber);
-                correct()
-            } else {
-                console.log("incorrect");
-                secondsLeft -10;
-                console.log(qNumber);
-                console.log(secondsLeft);
-                incorrect();
-            }
-        }
-        
+
+// the validate function 
+function validate(event) {
+    console.log(event.target.textContent)
+    if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
+        console.log("correct");
+        console.log(qNumber);
+        correct()
+    } else {
+        console.log("incorrect");
+        secondsLeft - 10;
+        console.log(qNumber);
+        console.log(secondsLeft);
+        incorrect();
+    }
+}
+
+
 //add a 'correct' alert
 function correct() {
     alert("Well done! That's correct")
-    qNumber = qNumber+1
+    qNumber = qNumber + 1
     qTitle.innerHTML = ""
     answerChoice.innerHTML = ""
     iterateQs()
 }
 
+
 //add an 'incorrect'alert
 function incorrect() {
-    secondsLeft = secondsLeft -10
+    secondsLeft = secondsLeft - 10
     alert("That's incorrect")
-    qNumber = qNumber+1
+    qNumber = qNumber + 1
     qTitle.innerHTML = ""
     answerChoice.innerHTML = ""
     iterateQs()
 }
+
 
 // timer function 
 function startTimer() {
@@ -120,20 +125,19 @@ submit.addEventListener("click", submitResults)
 function submitResults(event) {
     event.preventDefault()
     window.location.href = "highscores.html"
+
 };
+
+
 
 
 function resultsBoard() {
-// * append result to scoreboard
+    // * append result to scoreboard
 
 
-};
+
+}
+
 
 //addeventlistener     
 // clear highscores --> localStorage.clear()
-
-
-// TO DO
-// * local storage for initials 
-// * retrieve from local storage on highscores 
-// * clear highscores button --> addeventlistener. clear
