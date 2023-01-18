@@ -52,7 +52,12 @@ function iterateQs() {
 
         // validating the chosen answer
         var answerOption = document.querySelector(".answerOption")
-        answerOption.addEventListener("click", function validate(event) {
+        answerOption.addEventListener("click", validate) 
+
+    }
+}
+
+        function validate(event) {
             console.log(event.target.textContent)
             if (event.target.textContent == quizQuestions[qNumber].correctAnswer) {
                 console.log("correct");
@@ -65,10 +70,8 @@ function iterateQs() {
                 console.log(secondsLeft);
                 incorrect();
             }
-        })
-    }
-}
-
+        }
+        
 //add a 'correct' alert
 function correct() {
     alert("Well done! That's correct")
