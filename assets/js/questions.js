@@ -1,53 +1,92 @@
-var quizQuestions = [
+var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS
     {
-        question: "This is the first question",
+        question: "Inside which HTML element do we put the JavaScript?",
         answers: [
-            "this is an incorrect answer",
-            "this is a correct answer",
-            "this one ain't right",
-            "this is terrible",
+            "<javascript> ",
+            "<scripting>",
+            "<js>",
+            "<script>",
         ],
-        correctAnswer: "this is a correct answer"
+        correctAnswer: "<script>"
     },
     {
-        question: "Here's the second question",
+        question: "Where is the correct place to insert a JavaScript?",
         answers: [
-            "I'm the right answer",
-            "Not me",
-            "Don't choose me",
-            "Maybe I'm right"
+            "The <body> section",
+            "Both the <head> section and the <body> section are correct",
+            "The <head> section",
+           
         ],
-        correctAnswer: "I'm the right answer"
+        correctAnswer: "The <body> section"
     },
     {
-        question: "My third question",
+        question: "How do you write 'Hello World' in an alert box?",
         answers: [
-            "Don't choose this one",
-            "Definitely don't pick this",
-            "I'm not the one that you want",
-            "pick me pick me",
+            "msgBox('Hello World')",
+            "msg('Hello World')",
+            "alert('Hello World')",
+            "alertBox('Hello World')",
         ],
-        correctAnswer: "pick me pick me"
+        correctAnswer: "alert('Hello World')"
     },
     {
-        question: "Here is the fourth question",
+        question: "How do you create a function in JavaScript?",
         answers: [
-            "Wrong",
-            "Incorrect",
-            "Correct",
-            "Wrong"
+            "function:myFunction()",
+            "function myFunction()",
+            "function = myFunction",
+            "MyFunction.function()"
         ],
-        correctAnswer: "Correct"
+        correctAnswer: "function myFunction()"
     },
     { 
-        question: "Question 5",
+        question: "How do you call a function named 'myFunction'?",
         answers: [
-            "correct",
-            "wrong",
-            "wrong",
-            "wrong",
+            "call myFunction()",
+            "call function myFunction()",
+            "myFunction()",
+            "run myFunction",
         ],
-        correctAnswer: "correct"
+        correctAnswer: "myFunction()"
+    },
+    { 
+        question: "How to write an IF statement in JavaScript?",
+        answers: [
+            "if i=5",
+            "if i=5 then",
+            "if i==5 then",
+            "if (i==5)",
+        ],
+        correctAnswer: "if (i==5)"
+    },
+    { 
+        question: "How does a WHILE loop start?",
+        answers: [
+            "while (i<=10)",
+            "while (i<=10; i++)",
+            "while i=1 to 10",
+            "while {i<10)",
+        ],
+        correctAnswer: "while (i <=10)"
+    },
+    { 
+        question: "How does a FOR loop start?",
+        answers: [
+            "for (i=0; i<=5; i++)",
+            "for (i=0; i<=5)",
+            "for i=0; i<=5; i++",
+            "for (i<-5; i++)",
+        ],
+        correctAnswer: "for (i=0; i<=5; i++)"
+    },
+    { 
+        question: "How can you add a comment in JavaScript?",
+        answers: [
+            "'This is a comment'",
+            "//This is a comment",
+            "/:This is a comment",
+            "<!--This is a comment-->",
+        ],
+        correctAnswer: "//This is a comment"
     }
-
 ]
