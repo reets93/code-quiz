@@ -28,12 +28,16 @@
     var resultScore = localStorage.getItem("result")
     var initialsScore = localStorage.getItem("user")
     var userScores = (initialsScore + " - " + resultScore)
-    liScore.textContent = userScores;
+    liScore.textContent = userScores; 
+    
+    console.log(initialsScore)
+    console.log(resultScore)
+    console.log(userScores)
 
     var clearBtn = document.querySelector("#clear")
     clearBtn.addEventListener("click", clear)
     function clear() {
-      console.log("pressing the button")
+      console.log("clear button")
     liScore.textContent=""
     }
   </script>

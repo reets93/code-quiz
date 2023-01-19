@@ -15,7 +15,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
             "The <body> section",
             "Both the <head> section and the <body> section are correct",
             "The <head> section",
-           
+
         ],
         correctAnswer: "The <body> section"
     },
@@ -39,7 +39,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
         ],
         correctAnswer: "function myFunction()"
     },
-    { 
+    {
         question: "How do you call a function named 'myFunction'?",
         answers: [
             "call myFunction()",
@@ -49,7 +49,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
         ],
         correctAnswer: "myFunction()"
     },
-    { 
+    {
         question: "How to write an IF statement in JavaScript?",
         answers: [
             "if i=5",
@@ -59,7 +59,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
         ],
         correctAnswer: "if (i==5)"
     },
-    { 
+    {
         question: "How does a WHILE loop start?",
         answers: [
             "while (i<=10)",
@@ -69,7 +69,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
         ],
         correctAnswer: "while (i <=10)"
     },
-    { 
+    {
         question: "How does a FOR loop start?",
         answers: [
             "for (i=0; i<=5; i++)",
@@ -79,7 +79,7 @@ var quizQuestions = [ // questions taken from W3 Schools https://www.w3schools.c
         ],
         correctAnswer: "for (i=0; i<=5; i++)"
     },
-    { 
+    {
         question: "How can you add a comment in JavaScript?",
         answers: [
             "'This is a comment'",

@@ -102,7 +102,7 @@ function startTimer() {
         secondsLeft--;
         timerElement.textContent = secondsLeft;
 
-        if (secondsLeft === 0 || secondsLeft <=0 ) {
+        if (secondsLeft === 0 || secondsLeft <= 0) {
             clearInterval(timerInterval);
             endQuiz()
         }
@@ -116,15 +116,14 @@ function endQuiz(event) {
     displayQuestions.className = "hide";
     endScreen.className = "visible"
     finalScore.textContent = secondsLeft
-    // enter initials + submit
 }
 
 
 // end screen submit    
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
-    window.location.href = "highscores.html"   
-    
-    localStorage.setItem("user", initials.value)
+    window.location.href = "highscores.html"
+    var initials = document.querySelector("#initials")
+    localStorage.setItem("user", initials.value),
     localStorage.setItem("result", finalScore.textContent)
 };
