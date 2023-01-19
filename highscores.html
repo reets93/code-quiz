@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Highscores</title>
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Highscores</title>
 
-  <body>
-    <div class="wrapper">
-      <h1>Highscores</h1>
-      <ol id="highscores">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Highscores</h1>
+    <ol id="highscores">
       <!-- <li id="scores"></li> -->
     </ol>
 
-      <a href="index.html"><button>Go Back</button></a>
-      <button id="clear">Clear Highscores</button>
-    </div>
+    <a href="index.html"><button>Go Back</button></a>
+    <button id="clear">Clear Highscores</button>
+  </div>
 
-    <script src="./assets/js/scores.js"></script>
-  </body>
+  <script>
+    var listEl = document.querySelector("#highscores");
+    var liScore = document.createElement("li");
+    console.log(listEl);
+    listEl.appendChild(liScore);
+    var resultScore = localStorage.getItem("result")
+    var initialsScore = localStorage.getItem("user")
+    var userScores = (initialsScore + " - " + resultScore)
+    liScore.textContent = userScores;
+  </script>
+</body>
+
 </html>

@@ -123,26 +123,16 @@ function endQuiz(event) {
 // end screen submit     
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
-    // event.preventDefault()
-    window.location.href = "highscores.html"
-
+    window.location.href = "highscores.html"   
+    
     localStorage.setItem("user", initials.value)
-    localStorage.setItem("result", finalScore)
-
-    var listEl = document.querySelector("#highscores");
-    var liScore = document.createElement("li");
-    listEl.appendChild(liScore);
-    liScore.textContent = "testing"
-
+    localStorage.setItem("result", finalScore.textContent)
 };
 
-
+ 
 
 
 function resultsBoard() {
-    // * append result to scoreboard
-
-
 
 }
 
