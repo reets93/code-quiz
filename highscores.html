@@ -14,7 +14,6 @@
   <div class="wrapper">
     <h1>Highscores</h1>
     <ol id="highscores">
-      <!-- <li id="scores"></li> -->
     </ol>
 
     <a href="index.html"><button>Go Back</button></a>
@@ -30,6 +29,13 @@
     var initialsScore = localStorage.getItem("user")
     var userScores = (initialsScore + " - " + resultScore)
     liScore.textContent = userScores;
+
+    var clearBtn = document.querySelector("#clear")
+    clearBtn.addEventListener("click", clear)
+    function clear() {
+      console.log("pressing the button")
+    liScore.textContent=""
+    }
   </script>
 </body>
 

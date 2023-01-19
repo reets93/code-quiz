@@ -111,7 +111,7 @@ function startTimer() {
 };
 
 
-//event listener --> endQuiz based on submit button.
+//endQuiz function.
 function endQuiz(event) {
     displayQuestions.className = "hide";
     endScreen.className = "visible"
@@ -120,7 +120,7 @@ function endQuiz(event) {
 }
 
 
-// end screen submit     
+// end screen submit    
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
     window.location.href = "highscores.html"   
@@ -128,14 +128,3 @@ function submitResults(event) {
     localStorage.setItem("user", initials.value)
     localStorage.setItem("result", finalScore.textContent)
 };
-
- 
-
-
-function resultsBoard() {
-
-}
-
-
-//addeventlistener     
-// clear highscores --> localStorage.clear()
