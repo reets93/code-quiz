@@ -102,7 +102,7 @@ function startTimer() {
         secondsLeft--;
         timerElement.textContent = secondsLeft;
 
-        if (secondsLeft === 0) {
+        if (secondsLeft === 0 || secondsLeft <=0 ) {
             clearInterval(timerInterval);
             endQuiz()
         }
@@ -123,8 +123,16 @@ function endQuiz(event) {
 // end screen submit     
 submit.addEventListener("click", submitResults)
 function submitResults(event) {
-    event.preventDefault()
+    // event.preventDefault()
     window.location.href = "highscores.html"
+
+    localStorage.setItem("user", initials.value)
+    localStorage.setItem("result", finalScore)
+
+    var listEl = document.querySelector("#highscores");
+    var liScore = document.createElement("li");
+    listEl.appendChild(liScore);
+    liScore.textContent = "testing"
 
 };
 
